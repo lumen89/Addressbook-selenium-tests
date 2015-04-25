@@ -1,14 +1,12 @@
 package com.example.tests;
-import java.util.regex.Pattern;
-
 import org.testng.annotations.Test;
 
 public class ContactCreationTests extends TestBase {
 
   @Test
   public void testNonEmptyContactCreation() throws Exception {
-	openMainPage();
-	gotoContactPage();
+	app.getNavigationHelper().openMainPage();
+	app.getNavigationHelper().gotoContactPage();
     ContactData contact = new ContactData();
     contact.fname = "FirstName2";
     contact.lname = "LastName2";
@@ -24,17 +22,17 @@ public class ContactCreationTests extends TestBase {
     contact.addgroup = "group 1";
     contact.address2 = "Address3";
     contact.homephone2 = "Homephone3";
-    fillContactForm(contact);
-    submitContactCreation();
-    returnToHomePage();
+    app.getContactHelper().fillContactForm(contact);
+    app.getContactHelper().submitContactCreation();
+    app.getNavigationHelper().returnToHomePage();
   }
   
   @Test
   public void testEmptyContactCreation() throws Exception {
-	openMainPage();
-	gotoContactPage();
-    fillContactForm(new ContactData("", "", "", "", "", "", "", "", "-", "-", "", "", "", ""));
-    submitContactCreation();
-    returnToHomePage();
+	app.getNavigationHelper().openMainPage();
+	app.getNavigationHelper().gotoContactPage();
+    app.getContactHelper().fillContactForm(new ContactData("", "", "", "", "", "", "", "", "-", "-", "", "", "", ""));
+    app.getContactHelper().submitContactCreation();
+    app.getNavigationHelper().returnToHomePage();
   }
 }
