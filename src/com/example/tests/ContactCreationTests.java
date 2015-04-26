@@ -8,8 +8,8 @@ public class ContactCreationTests extends TestBase {
 	app.getNavigationHelper().openMainPage();
 	app.getNavigationHelper().gotoContactPage();
     ContactData contact = new ContactData();
-    contact.fname = "FirstName2";
-    contact.lname = "LastName2";
+    contact.fname = "FirstName3";
+    contact.lname = "LastName3";
     contact.address1 = "Address2";
     contact.homephone = "81112223344";
     contact.mobilephone = "92223334455";

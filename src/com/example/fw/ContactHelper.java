@@ -25,16 +25,28 @@ public class ContactHelper extends HelperBase {
 		type(By.name("work"), contact.workphone);
 		type(By.name("email"), contact.email1);
 		type(By.name("email2"), contact.email2);
-	    String text = contact.birthday;
-	    selectByText(By.name("bday"), contact.birthday);
-	    selectByText(By.name("bmonth"), contact.birthmonth);
+	   selectByText(By.name("bday"), contact.birthday);
+	   selectByText(By.name("bmonth"), contact.birthmonth);
 	    type(By.name("byear"), contact.birthyear);
-	  //selectByText(By.name("new_group"), contact.addgroup);
+	   //selectByText(By.name("new_group"), contact.addgroup);
 	    type(By.name("address2"), contact.address2);
 	    type(By.name("phone2"), contact.homephone2);
 	   
 	}
 
+		
+	public void selectContactByIndex(int index) {
+		click(By.xpath(".//*[@id='maintable']/tbody/tr[" + index +"]/td[7]/a/img"));
+	}
 	
+	public void deleteContact() {
+		click(By.xpath(".//*[@id='content']/form[2]/input[2]"));
+		
+	}
+	
+	public void submitContactModification() {
+		click(By.xpath(".//*[@id='content']/form[1]/input[11]"));
+	}
 
+	
 }

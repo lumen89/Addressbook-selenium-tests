@@ -24,4 +24,8 @@ public class NavigationHelper extends HelperBase {
 		click(By.linkText("home page"));
 	}
 
+	public void gotoEditContactPage() {
+		click(By.xpath(".//tr[3]/td[7]/a"));
+	}
+	
 }
